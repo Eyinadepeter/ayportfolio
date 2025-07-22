@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "Professional portfolio of Ay - Video Editor",
   generator: "nextjs",
   icons: {
-    icon: "/images/IMG_2859.PNG",
+    icon: "/IMG_2859.PNG",
   },
 };
 
