@@ -99,9 +99,9 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
-              <Link href="https://drive.google.com/file/d/1uM6lRqf7GGfWpZ7ywGkl9B0mge8DA26t/view?usp=drive_link">
+              <a href="https://drive.google.com/file/d/1uM6lRqf7GGfWpZ7ywGkl9B0mge8DA26t/view?usp=drive_link">
                 <Button className="w-full">Resume</Button>
-              </Link>
+              </a>
             </nav>
           </div>
         </div>

@@ -5,9 +5,7 @@ import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   Facebook,
-  Github,
   Instagram,
-  Linkedin,
   Twitter,
   Youtube,
 } from "lucide-react";
@@ -27,7 +25,6 @@ export default function Hero() {
         clearInterval(typingInterval);
       }
     }, 100);
-
     return () => clearInterval(typingInterval);
   }, []);
 
@@ -44,29 +41,32 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-32">
+    <section
+      id="home"
+      className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-background"
+    >
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-primary">Ayomide </span>
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+              Hi, I'm <span className="text-primary">Ayomide</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-6">
+            <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 flex items-center">
               <span className="text-foreground">{text}</span>
-              <span className="animate-blink">|</span>
+              <span className="animate-blink ml-1 text-primary">|</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-              I craft compelling video content, manage live broadcast
-              operations, and drive social media engagement. With a keen eye for
-              detail, I ensure seamless editing, smooth broadcasts, and
-              impactful online presence, turning creative ideas into engaging
-              digital experiences.
+            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
+              I craft compelling video content, manage live broadcasts, and
+              drive social media engagement. With a keen eye for detail, I
+              ensure seamless editing and impactful digital presence.
             </p>
 
+            {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
@@ -85,103 +85,71 @@ export default function Hero() {
               </Button>
             </div>
 
-            <div className="flex gap-4 mt-8">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-                asChild
-              >
-                <a
-                  href="https://youtube.com/@midephilips?si=zEOvcvwyfeTy6EgT"
-                  target="_blank"
-                  rel="noopener noreferrer"
+            {/* Social Icons */}
+            <div className="flex gap-3 mt-8">
+              {[
+                {
+                  href: "https://youtube.com/@midephilips?si=zEOvcvwyfeTy6EgT",
+                  icon: Youtube,
+                },
+                {
+                  href: "https://youtube.com/@ytmidephilips?si=qfAYlIp_kDf2PVEI",
+                  icon: Youtube,
+                },
+                {
+                  href: "https://www.instagram.com/_midephilips",
+                  icon: Instagram,
+                },
+                {
+                  href: "https://x.com/_midephilips",
+                  icon: Twitter,
+                },
+                {
+                  href: "https://www.facebook.com/share/1HHNuFHkKm",
+                  icon: Facebook,
+                },
+              ].map(({ href, icon: Icon }, i) => (
+                <Button
+                  key={i}
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full hover:bg-primary/10 transition"
+                  asChild
                 >
-                  <Youtube className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-                asChild
-              >
-                <a
-                  href="https://youtube.com/@ytmidephilips?si=qfAYlIp_kDf2PVEI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Youtube className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-                asChild
-              >
-                <a
-                  href="https://www.instagram.com/_midephilips?igsh=cXcxajZpcGthM3E3&utm_source=qr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-                asChild
-              >
-                <a
-                  href="https://x.com/_midephilips?s=21&t=LcZi-4TmeJ-DI6V5BD4d6w"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-                asChild
-              >
-                <a
-                  href="https://www.facebook.com/share/1HHNuFHkKm/?mibextid=wwXIfr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Facebook className="h-5 w-5" />
-                </a>
-              </Button>
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    <Icon className="w-5 h-5 text-muted-foreground hover:text-primary transition" />
+                  </a>
+                </Button>
+              ))}
             </div>
           </motion.div>
-          <div></div>
+
+          {/* Right Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative aspect-square max-w-md mx-auto"
+            className="relative max-w-sm mx-auto w-full"
           >
-            <div className="w-[400px]">
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-muted">
               <img
-                src="IMG_2859.PNG"
-                alt="test"
-                className="w-full h-full object-cover rounded-md shadow-lg"
+                src="/IMG_2859.PNG"
+                alt="Ayomide"
+                className="w-full h-auto object-cover"
+                loading="lazy"
               />
             </div>
           </motion.div>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block">
+      {/* Scroll down indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block">
         <button
           onClick={() => scrollToSection("about")}
-          className="animate-bounce"
+          className="animate-bounce p-2 rounded-full bg-muted hover:bg-muted-foreground/10 transition"
         >
-          <ArrowRight className="h-6 w-6 transform rotate-90" />
+          <ArrowRight className="h-6 w-6 rotate-90 text-muted-foreground" />
         </button>
       </div>
     </section>
