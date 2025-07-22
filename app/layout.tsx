@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Ayomide | Portfolio",
   description: "Professional portfolio of Ay - Video Editor",
   generator: "nextjs",
+  icons: {
+    icon: "/images/IMG_2859.PNG",
+  },
 };
 
 export default function RootLayout({
