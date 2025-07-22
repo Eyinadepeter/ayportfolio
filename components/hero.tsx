@@ -83,6 +83,13 @@ export default function Hero() {
               >
                 Contact Me
               </Button>
+              <a
+                href="https://drive.google.com/file/d/1nkg9Ag3-Arm7LsoQbboSe-ie0IIj_46D/view?usp=drivesdk "
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full">View Resume</Button>
+              </a>
             </div>
 
             {/* Social Icons */}
