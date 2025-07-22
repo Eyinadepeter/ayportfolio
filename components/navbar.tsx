@@ -68,7 +68,11 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
-            <a href="https://drive.google.com/file/d/1uM6lRqf7GGfWpZ7ywGkl9B0mge8DA26t/view?usp=drive_link  ">
+            <a
+              href="https://drive.google.com/file/d/1nkg9Ag3-Arm7LsoQbboSe-ie0IIj_46D/view?usp=drivesdk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button>Resume</Button>
             </a>
           </nav>
@@ -99,7 +103,11 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
-              <a href="https://drive.google.com/file/d/1uM6lRqf7GGfWpZ7ywGkl9B0mge8DA26t/view?usp=drive_link">
+              <a
+                href="https://drive.google.com/file/d/1nkg9Ag3-Arm7LsoQbboSe-ie0IIj_46D/view?usp=drivesdk "
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="w-full">Resume</Button>
               </a>
             </nav>
