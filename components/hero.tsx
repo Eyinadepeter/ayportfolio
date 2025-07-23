@@ -140,7 +140,7 @@ export default function Hero() {
           >
             <div className="rounded-2xl overflow-hidden shadow-xl border border-muted">
               <img
-                src="/IMG_2859.PNG"
+                src="/IMG_3050.JPG"
                 alt="Ayomide"
                 className="w-full h-auto object-cover"
                 loading="lazy"
